@@ -12,8 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install libgeos
-      run: sudo apt-get install -y libgeos++-dev
+    - name: Install cartopy dependencies
+      run: sudo apt-get install -y libgeos++-dev proj4
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
