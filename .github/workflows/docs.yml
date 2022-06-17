@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Conda
-    - uses: conda-incubator/setup-miniconda@v2.1.1
+      uses: conda-incubator/setup-miniconda@v2.1.1
       with:
         activate-environment: clouddrift
         environment-file: environment.yml
@@ -21,11 +21,11 @@ jobs:
         channels: conda-forge,defaults
         channel-priority: true
     - name: Build docs
-    - uses: ammaraskar/sphinx-action@master
+      uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
     - name: Upload HTML artificat
-    - uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML
         path: docs/_build/html/
