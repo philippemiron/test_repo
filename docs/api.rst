@@ -7,7 +7,3 @@ Auto-generated summary of CloudDrift's API. For more details and examples, refer
 
 Data
 ----
-
-.. automodule:: clouddrift.dataformat
-   :members:
-   :undoc-members:
