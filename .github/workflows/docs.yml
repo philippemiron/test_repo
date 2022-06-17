@@ -12,11 +12,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    # Standard drop-in approach that should work for most people.
+    - name: Install libgeos
+      run: sudo apt-get install -y libgeos++-dev
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
-        pre-build-command: "apt-get update -y && apt-get install -y libgeos++-dev"
     # Create an artifact of the html output.
     - uses: actions/upload-artifact@v1
       with:
