@@ -12,8 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install cartopy dependencies
-      run: sudo apt-get install -y libgeos-dev libproj-dev
+    - uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          activate-environment: clouddrift
+          environment-file: environment.yml
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
