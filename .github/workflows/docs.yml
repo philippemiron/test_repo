@@ -11,14 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
+    - uses: actions/checkout@v4
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
+        pre-build-command: "apt-get update -y && apt-get install -y git"
     # Create an artifact of the html output.
     - uses: actions/upload-artifact@v1
       with:
