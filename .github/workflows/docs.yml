@@ -12,8 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-         fetch-depth: 0
     - name: Conda
       uses: conda-incubator/setup-miniconda@v2.1.1
       with:
@@ -50,3 +48,4 @@ jobs:
       with:
         branch: gh-pages
         directory: gh-pages
+        force: true
