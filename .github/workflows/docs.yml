@@ -13,9 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: conda-incubator/setup-miniconda@v2.1.1
-        with:
-          activate-environment: clouddrift
-          environment-file: environment.yml
+      with:
+        activate-environment: clouddrift
+        environment-file: environment.yml
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
