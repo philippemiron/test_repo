@@ -1,2 +1,2 @@
+sphinx
 pydata_sphinx_theme
-pygments==2.11.2
