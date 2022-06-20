@@ -20,6 +20,7 @@ jobs:
         mamba-version: "*"
         channels: conda-forge,defaults
         channel-priority: true
+    - run: conda info
     - name: Build docs
       uses: ammaraskar/sphinx-action@master
       with:
