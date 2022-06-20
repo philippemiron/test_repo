@@ -13,13 +13,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Conda
-      uses: conda-incubator/setup-miniconda@v2.1.1
+      uses: conda-incubator/setup-miniconda@v2
       with:
+        use-mamba: true
         mamba-version: "*"
         channels: conda-forge,defaults
         channel-priority: true
         activate-environment: clouddrift
         environment-file: environment.yml
+        auto-activate-base: false
     - run: conda info
     - name: Build docs
       uses: ammaraskar/sphinx-action@master
