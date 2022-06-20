@@ -7,17 +7,12 @@ on:
 
 jobs:
   docs:
-
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: ["ubuntu-latest"]
         python-version: ["3.9"]
-    defaults:
-      run:
-        shell: bash -l {0}
-
     steps:
     - uses: actions/checkout@v3
     - name: Conda
@@ -28,10 +23,10 @@ jobs:
         mamba-version: "*"
         channels: conda-forge,defaults
         channel-priority: true
-
     - name: Build docs
       shell: bash -l {0}
       run: |
+        conda activate clouddrift
         pushd docs
         make html
     - name: Upload HTML artificat
@@ -39,7 +34,7 @@ jobs:
       with:
         name: DocumentationHTML
         path: docs/_build/html/
-    - name: Commit changes
+    - name: Commit to gh-pages
       run: |
         git clone https://github.com/ammaraskar/sphinx-action-test.git --branch gh-pages --single-branch gh-pages
         cp -r docs/_build/html/* gh-pages/
