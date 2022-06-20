@@ -24,10 +24,11 @@ author = "Philippe Miron"
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../"))
-sys.path.insert(0, os.path.abspath("../../"))
+sys.path.insert(0, os.path.abspath("../clouddrift/"))
 
-import clouddrift
+import dataformat
+import filter
+import spectrum
 
 # -- General configuration ---------------------------------------------------
 
